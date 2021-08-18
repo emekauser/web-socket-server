@@ -7,7 +7,7 @@ A small websockets app for sharing arbitrary messages with all other users with 
 2. ``` npm install ```
 3. ``` npm start  ```
 
-#End points
+# End points
 1. get_all_messages GET
 2. get_active_users GET
 
