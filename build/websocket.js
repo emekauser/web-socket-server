@@ -42,10 +42,7 @@ var initiateServer = function () {
               });
 
               socket.on("disconnect", function () {
-                console.log("disconnetd");
-                _user.User.deleteOne({ socket_id: socket.id }, function (err, result) {
-                  console.log(err, result);
-                });
+                _user.User.deleteOne({ socket_id: socket.id }, function (err, result) {});
               });
 
               socket.on("message", function () {
@@ -134,7 +131,7 @@ var deleteOldestMessage = function () {
                     switch (_context3.prev = _context3.next) {
                       case 0:
                         if (!err) {
-                          _message.Message.deleteOne({ _id: message._id });
+                          _message.Message.deleteOne({ _id: message._id }, function (err, result) {});
                         }
 
                       case 1:
