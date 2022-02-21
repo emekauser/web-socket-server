@@ -7,7 +7,7 @@ export default {
       .sort({ created_at: 1 })
       .exec(async (err, messages) => {
         if (err)
-          return res.status(200).json({
+          return res.status(400).json({
             status: false,
             message: "Error occurred while retrieving messages"
           });
@@ -19,9 +19,9 @@ export default {
   getActiveUsers: async (req, res) => {
     User.find().exec(async (err, users) => {
       if (err)
-        return res.status(200).json({
+        return res.status(400).json({
           status: false,
-          message: "Error occurred while retrieving messages"
+          message: "Error occurred while retrieving users"
         });
 
       return res.status(200).json({ status: true, data: users });

@@ -8,7 +8,9 @@ import websocket from "./websocket";
 const port = 4000;
 const app = express();
 
-mongoose.connect("mongodb://localhost:27017/rockay", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost:27017/test_db", {
+  useNewUrlParser: true
+});
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
